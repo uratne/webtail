@@ -1,0 +1,29 @@
+{
+    "configs": [
+        {
+            "app_name": {
+                "SinglePod": "Fefs 1.0"
+            },
+            "log_file_dir": ".",
+            "log_file_name_regex": "^log.*.txt$",
+            "server_host": "localhost",
+            "server_port": 8080,
+            "server_path": "ws",
+            "channel_buffer": 10
+        },
+        {
+            "app_name": {
+                "MultiPod": {
+                    "application": "Fefs 2.0",
+                    "pod_name": "Pod 1"
+                }
+            } ,
+            "log_file_dir": "./log",
+            "log_file_name_regex": "log.txt",
+            "server_host": "localhost",
+            "server_port": 8080,
+            "server_path": "ws",
+            "channel_buffer": 10
+        }
+    ]
+}

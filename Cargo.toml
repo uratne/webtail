@@ -1,0 +1,39 @@
+[package]
+name = "fefs"
+version = "0.0.1"
+edition = "2021"
+
+default-run = "fefs"
+
+[[bin]]
+name = "server"
+path = "src/bin/server.rs"
+
+[[bin]]
+name = "client"
+path = "src/bin/client.rs"
+
+[lib]
+name = "lib"
+path = "src/lib.rs"
+
+[dependencies]
+actix-cors = "0.7.0"
+actix-files = "0.6.6"
+actix-web = "4.9.0"
+actix-ws = "0.3.0"
+dotenv = "0.15.0"
+env_logger = "0.11.5"
+futures-util = "0.3.31"
+log = "0.4.22"
+serde = { version = "1.0.215",features = ["derive"] }
+serde_json = "1.0.132"
+tokio = { version = "1.41.1", features = ["full"] }
+tokio-tungstenite = "0.24.0"
+tungstenite = "0.24.0"
+regex = "1.11.1"
+chrono = { version = "0.4.38", features = ["serde"] }
+tokio-stream = { version = "0.1.16", features = ["sync"] }
+futures = "0.3.31"
+thiserror = "2.0.3"
+borsh = { version = "1.5.3", features = ["derive"] }
