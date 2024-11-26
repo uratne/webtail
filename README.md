@@ -25,7 +25,7 @@ Server will serve the UI and will act as a router for the data coming in from cl
 1. clone the [`repository`](https://github.com/uratne/webtail) and setup submodule.
 ```bash
 git clone https://github.com/uratne/webtail
-cd f___-efs
+cd webtail
 git submodule init
 git submodule update
 ```
