@@ -48,6 +48,7 @@ pub async fn data_inbound_ws(req: HttpRequest, stream: web::Payload, broadcaster
     let (tx, _) = broadcast::channel(100);
 
     let mut locked_broadcasters = broadcasters.lock().await;
+    let application = application.configure_default_pods(& *locked_broadcasters);
     locked_broadcasters.insert(application.clone(), tx.clone());
     drop(locked_broadcasters);
 
