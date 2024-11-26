@@ -36,18 +36,18 @@ RUN npm run build
 # Run server
 FROM ubuntu:24.04 AS runner
 WORKDIR /app
-COPY --from=server_builder /build/target/release/server /usr/local/bin/wl
+COPY --from=server_builder /build/target/release/server /usr/local/bin/webtail
 COPY --from=frontend_builder /frontend/build /app/frontend
 COPY .prod.env /app/.prod.env
 
-RUN groupadd -r wl && useradd -r -g wl wl
-RUN chown -R wl:wl /app
-RUN chown -R wl:wl /usr/local/bin/wl
+RUN groupadd -r webtail && useradd -r -g webtail webtail
+RUN chown -R webtail:webtail /app
+RUN chown -R webtail:webtail /usr/local/bin/webtail
 
 ENV ENVIRONMENT=prod
 
-USER wl:wl
+USER webtail:webtail
 
-ENTRYPOINT ["wl"]
+ENTRYPOINT ["webtail"]
 
 EXPOSE 8080

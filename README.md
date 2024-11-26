@@ -1,7 +1,8 @@
-# WEB TAIL
+<h1 style="text-align: center">WEB TAIL</h1>
+
 ![Svelte Badge](https://img.shields.io/badge/Svelte-FF3E00?logo=svelte&logoColor=fff&style=flat)![Vite Badge](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff&style=flat)![Rust Badge](https://img.shields.io/badge/Rust-000?logo=rust&logoColor=fff&style=flat)![.ENV Badge](https://img.shields.io/badge/.ENV-ECD53F?logo=dotenv&logoColor=000&style=flat)
 <br>
-&emsp; WebTail is just a tail to a file that yoyu can watch from the UI. There's 3 parts to the project. UI, Server & Client. Here client is the one who connects from servers/pods/instances to push data to the server. Both Server & Client are rust applications. Server has a simple actix server. Client is Svelte application.\
+&emsp; WebTail is just a tail to a file that you can watch from the UI. There's 3 parts to the project. UI, Server & Client. Here client is the one who connects from servers/pods/instances to push data to the server. Both Server & Client are rust applications. Server has a simple actix server. Client is Svelte application.
 
 ## Goal
 - Main goal of this project is to learn svelte, and work on my rust. 

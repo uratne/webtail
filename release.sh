@@ -11,12 +11,12 @@ if ! version=$(grep -oP 'version = "\K[^"]+' Cargo.toml); then
 fi
 
 # Server tag
-if ! git tag -a "$version" -m "Release $version"; then
+if ! git tag -a "v$version" -m "Release $version"; then
     echo "Error: Failed to create server tag"
     exit 1
 fi
 
-if ! git push origin "$version"; then
+if ! git push origin "v$version"; then
     echo "Error: Failed to push server tag"
     exit 1
 fi
