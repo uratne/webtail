@@ -53,8 +53,8 @@ pub struct ClientConfiguration {
 
 impl ClientConfiguration {
     pub fn read_from_file() -> Self {
-        let config = std::fs::read_to_string("fefs_config.json").map_err(|err| error!("Error reading fefs_config.json: {}", err)).unwrap();
-        serde_json::from_str(&config).map_err(|err| error!("Error serializing fefs_config.json: {}", err)).unwrap()
+        let config = std::fs::read_to_string("webtail_config.json").map_err(|err| error!("Error reading webtail_config.json: {}", err)).unwrap();
+        serde_json::from_str(&config).map_err(|err| error!("Error serializing webtail_config.json: {}", err)).unwrap()
     }
 
     pub fn get_configurations(self) -> Vec<LogConfiguration> {

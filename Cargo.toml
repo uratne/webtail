@@ -1,9 +1,9 @@
 [package]
-name = "fefs"
+name = "webtail"
 version = "0.0.1"
 edition = "2021"
 
-default-run = "fefs"
+default-run = "webtail"
 
 [[bin]]
 name = "server"

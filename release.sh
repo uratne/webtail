@@ -35,12 +35,12 @@ fi
 cd ..
 
 # Docker build and push
-if ! docker build -t "uratne/fefs:$version" .; then
+if ! docker build -t "uratne/webtail:$version" .; then
     echo "Error: Docker build failed"
     exit 1
 fi
 
-if ! docker push "uratne/fefs:$version"; then
+if ! docker push "uratne/webtail:$version"; then
     echo "Error: Docker push failed"
     exit 1
 fi
@@ -51,6 +51,6 @@ if ! cargo build --target x86_64-unknown-linux-musl --release --bin client; then
     exit 1
 fi
 
-mkdir -p ~/Documents/fefs
+mkdir -p ~/Documents/webtail
 cp "target/x86_64-unknown-linux-musl/release/client" \
-   "${HOME}/Documents/fefs/fefs_client_${version}_linux_x86_64"
+   "${HOME}/Documents/webtail/webtail_client_${version}_linux_x86_64"

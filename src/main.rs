@@ -15,7 +15,7 @@ fn main(){
         1. cargo run --bin server
             i. .env file should be prersent in the current directory
         2. cargo run --bin client
-            ii. fefs_config.json file should be present in the current directory
+            ii. webtail_config.json file should be present in the current directory
         3. From the frontend directory,
             npm run dev
 

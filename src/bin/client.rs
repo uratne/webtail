@@ -24,5 +24,5 @@ async fn main() {
         };
     }
 
-    info!("fefs client stopped");
+    info!("webtail client stopped");
 }

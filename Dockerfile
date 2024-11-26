@@ -36,18 +36,18 @@ RUN npm run build
 # Run server
 FROM ubuntu:24.04 AS runner
 WORKDIR /app
-COPY --from=server_builder /build/target/release/server /usr/local/bin/fefs
+COPY --from=server_builder /build/target/release/server /usr/local/bin/wl
 COPY --from=frontend_builder /frontend/build /app/frontend
 COPY .prod.env /app/.prod.env
 
-RUN groupadd -r fefs && useradd -r -g fefs fefs
-RUN chown -R fefs:fefs /app
-RUN chown -R fefs:fefs /usr/local/bin/fefs
+RUN groupadd -r wl && useradd -r -g wl wl
+RUN chown -R wl:wl /app
+RUN chown -R wl:wl /usr/local/bin/wl
 
 ENV ENVIRONMENT=prod
 
-USER fefs:fefs
+USER wl:wl
 
-ENTRYPOINT ["fefs"]
+ENTRYPOINT ["wl"]
 
 EXPOSE 8080
