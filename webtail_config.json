@@ -2,7 +2,10 @@
     "configs": [
         {
             "app_name": {
-                "SinglePod": "Fefs 1.0"
+                "MultiPod": {
+                    "application": "Fefs 2.0",
+                    "pod_name": "<--DEFAULT-->"
+                }
             },
             "log_file_dir": ".",
             "log_file_name_regex": "^log.*.txt$",
@@ -15,7 +18,7 @@
             "app_name": {
                 "MultiPod": {
                     "application": "Fefs 2.0",
-                    "pod_name": "Pod 1"
+                    "pod_name": "<--DEFAULT-->"
                 }
             } ,
             "log_file_dir": "./log",

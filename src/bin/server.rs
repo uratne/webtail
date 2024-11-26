@@ -15,6 +15,9 @@ async fn main() -> std::io::Result<()> {
     }
     env_logger::init_from_env(env_logger::Env::new().default_filter_or("info"));
 
+    info!("Starting webtail server");
+    info!("Environment: {}", environment);
+
     let port = env::var("PORT").unwrap_or_else(|_| "8080".to_string());
     let host = env::var("HOST").unwrap_or_else(|_| "localhost".to_string());
     let frontend_origin = env::var("FRONTEND_ORIGIN")
@@ -56,7 +59,9 @@ async fn main() -> std::io::Result<()> {
                     .default_handler(|req: actix_web::dev::ServiceRequest| {
                         let (http_req, _payload) = req.into_parts();
                         async {
-                            let response = fs::NamedFile::open("./frontend/build/index.html")?
+                            let path_to_front_end = env::var("PATH_TO_FRONTEND").unwrap_or_else(|_| "./frontend/build".to_string());
+                            let path_to_front_end_index = format!("{}/index.html", &path_to_front_end);
+                            let response = fs::NamedFile::open(path_to_front_end_index.clone())?
                                 .into_response(&http_req);
                             Ok(actix_web::dev::ServiceResponse::new(http_req, response))
                         }
